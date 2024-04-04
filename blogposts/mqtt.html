@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>ABHINAV PORTFOLIO</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link href="../assets/css/main.css" rel="stylesheet"/>
+    <noscript>
+        <link href="../assets/css/noscript.css" rel="stylesheet"/>
+    </noscript>
+    <style>
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div class="fade-in fullscreen" id="wrapper">
+
+
+    <!-- Nav -->
+    <!-- Main -->
+    <div id="main">
+        <section class="post">
+            <header class="major">
+                <span class="date">OCTOBER 20, 2023</span>
+                <h1>MQTT
+                </h1>
+                <hr>
+                <h3>Message Queue Telemetry Transport</h3>
+                <p>A message publish/subscribe protocol that is lightweight<br>
+                    and provides a scalable and reliable way to connect devices over the Internet and send messages
+                    efficiently.
+                </p>
+            </header>
+            <hr>
+
+            <!-- Box --> <h4>MQTT Clients</h4>
+
+            <div class="box">
+                <p>
+                    There are many MQTT clients such as HBMQTT and gmqtt in existence. One popular MQTT client used is
+                    <b>Paho</b>.<br>
+                    The paho MQTT python client from Eclipse supports MQTT v 3.1 and 3,1.1, and now MQTTv5 and works
+                    with Python 3.x.<br>
+                    1. To install paho,enter the below command in the terminal
+                <pre><code>
+                    #Install paho-mqtt library
+                    pip install paho-mqtt
+
+            </code></pre>
+                2.Import the paho mqtt client
+                <pre><code>
+                    import paho.mqtt.client as mqtt
+            </code></pre>
+
+                3.Create an instance of the Mqtt Client.
+                <pre><code>
+
+                    #client_id is mandatory
+                   # other parameters are optional
+
+                    client=mqtt.Client(client_id,
+                                       clean_session=True,
+                                       userdata=None,
+                                       protocol=MQTTv311,
+                                       transport=”tcp”)
+
+                </code></pre>
+                4.Connect to the Broker.Only host and port are required.(I use <a href="https://mosquitto.org/">Mosquitto MQTT</a>)
+                <pre><code>
+
+                    connect(host, port=1883, keepalive=60, bind_address="")
+
+                </code></pre>
+                5.Publish the message using client.publish().Payload is the message that you want to publish on the topic
+                <pre><code>
+                    client.publish(topic, payload=None, qos=0, retain=False)
+
+                </code></pre>
+
+                 6.Subscribe to the topic using client.subscribe().
+                <pre><code>
+                    client.subscribe(topic,qos=0)
+
+                </code></pre>
+
+                <h3>To publish a message on a topic</h3>
+                <pre><code>
+                #Import paho-mqtt library
+                import paho.mqtt.client as mqtt
+
+                broker = "localhost"
+                port = 1883
+
+
+                def on_connect(client, userdata, flags, rc):
+                    if rc == 0:
+                        print("Connected to Broker")
+                    else:
+                        print("Not connected")
+
+
+                def on_publish(client, userdata, result):
+                    print("data published")
+                    pass
+
+                #Connect to the Client
+                client1 = mqtt.Client()
+                client1.on_connect = on_connect
+                client1.connect(broker ,port)
+
+                #Publish the message on Topic
+                client1.on_publish = on_publish
+                client1.publish("house/bulb" ,"off")
+
+            </code>
+                </pre>
+                <h3>Subscribe to a topic for a message</h3>
+                <pre><code>
+                import paho.mqtt.client as mqtt
+                # This is the Subscriber
+                broker="localhost"
+                def on_connect(client, userdata, flags, rc):
+                    print("Connected with result code " + str(rc))
+                    client.subscribe("house/bulb")
+
+
+                def on_message(client, userdata, msg):
+                    print(msg.payload.decode('UTF-8'))
+
+
+
+                client = mqtt.Client()
+                client.connect("localhost", 1883)
+
+                client.on_connect = on_connect
+                client.on_message = on_message
+
+                client.loop_forever()
+
+
+
+                </code>
+
+                </pre>
+                </p>
+
+            </div>
+            <h3>Resources:</h3>
+            <div class="box">
+                <a href="http://www.steves-internet-guide.com/mqtt-python-beginners-course/">1.Steves Internet Guide </a>
+            </div>
+
+        </section>
+
+    </div>
+
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>ABHINAV PORTFOLIO</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+    <link href="../assets/css/main.css" rel="stylesheet"/>
+    <noscript>
+        <link href="../assets/css/noscript.css" rel="stylesheet"/>
+    </noscript>
+    <style>
+    .content{
+    display:none
+    }
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+    </style>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div class="fade-in fullscreen" id="wrapper">
+
+
+    <!-- Nav -->
+    <!-- Main -->
+    <div id="main">
+        <section class="post">
+            <header class="major">
+                <span class="date">OCTOBER 18, 2023</span>
+                <h1>FUNDAMENTALS OF SCRUM
+                </h1>
+                <hr>
+                <h3>What is Scrum?</h3>
+                <p>A Light framework that helps people,teams and organization generate <br/>
+                    value though adaptive solutions for complex problems </p>
+            </header>
+            <!--<div class="image main"><img src="../images/pic01.jpg" alt="" /></div>-->
+            <p>
+                Scrum is founded on <b>Empiricism</b> and <b>Lean Thinking</b>
+            </p>
+            <h4>Empiricism</h4>
+            <ul>
+                Empiricism is the idea that we gain knowledge from experience and decide based on observations
+            </ul>
+            <h4>Lean Thinking</h4>
+            <ul>
+                Reduces waste and focus on the essentials
+            </ul>
+
+			<p>Scrum employs an iterative and incremental approach to optimize predictability and to control risk.</p>
+			<hr>
+			<h2 align="center">PILLARS OF SCRUM</h2>
+			<p>There are 3 pillars  for scrum.They are</p>
+			<h5>1. Transperancy<h5>
+			<h5>2. Inspection<h5>
+			<h5>3. Adaptation<h5>
+			<hr>
+			<h2 align="center">SCRUM VALUES</h2>
+			<p>SCRUM Values includes</p>
+			<ul>
+				<li>Commitment</li>
+				<li>Focus</li>
+				<li>Openness</li>
+				<li>Respect</li>
+				<li>Courage</li>
+            </ul>
+			<hr>
+			<h2 align="center">SCRUM TEAM</h2>
+                <h6 align="center">Click on Avatar for More Information</h6>
+                <div class="box">
+                <div class="row">
+                <div class="col-4">
+                <div class="image" align="center">
+                    <a href="#" onclick="changeContent(1); return false;"><img class="avatar" src="../images/blog/scrum/avatar3.png" alt=""/>
+                        <h4>SCRUM MASTER</h4></a>
+                </div>
+
+                </div >
+                <div class="col-4">
+
+                <div class="image" align="center">
+                    <a href="#" onclick="changeContent(2); return false;">
+                    <img class="avatar" src="../images/blog/scrum/avatar2.png" alt=""/><h4>PRODUCT OWNER</h4></div><br>
+                    </a>
+                </div >
+                <div class="col-4" align="center">
+                <div class="image" >
+                    <a href="#" onclick="changeContent(3); return false;">
+                    <img class="avatar" src="../images/blog/scrum/avatar1.png" alt="" /><h4>DEVELOPERS</h4></div><br>
+                    </a >
+                </div >
+        <div id="contentDiv">
+        <div class="content" id="content1">
+            <div >
+                <br>
+                <h4 align="center">SCRUM MASTER</h4>
+                Accountable for establishing scrum as defined in the scrum Guide and for scrum team effectiveness.
+            </div>
+        </div>
+        <div class="content" id="content2">
+            <br>
+            <div >
+                <h4 align="center">PRODUCT OWNER</h4>
+                Responsible for maximizing the value of the product from the work of scrum team.
+<br>Accountable for:
+                <ul>
+                <li>
+                     Developing and explicitly communicating the product goal               </li>
+                    <li>
+                        Create and communicating product backlog items
+                    </li>
+                    <li>
+                        Order Product Backlog items
+                    </li>
+                    <li>Ensure product backlog is visible ,transparent and understood</li>
+
+                </ul>
+
+
+
+            <ul>
+            </ul>
+            </div>
+        </div>
+        <div class="content" id="content3">
+           <br>
+            <div >
+            <h4 >DEVELOPERS</h4>
+            Responsibilities of Developers
+            <ul>
+                <li>Creating a plan for the Sprint, the Sprint Backlog;
+
+                </li>
+                <li>
+                    Instilling quality by adhering to a Definition of Done;
+
+
+
+                </li>
+                <li>Adapting their plan each day toward the Sprint Goal; and,
+</li>
+                <li>Holding each other accountable as professionals.
+</li>
+
+            </ul>
+            </div>
+</div>
+        </div>
+                </div>
+
+                </div>
+                <hr>
+			<h2 align="center">STILL UPDATING</h2>
+
+
+
+        </section>
+
+
+    </div>
+
+
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+  <script>
+        function changeContent(contentId) {
+            // Hide all content divs
+            var allContent = document.querySelectorAll('.content');
+            for (var i = 0; i < allContent.length; i++) {
+                allContent[i].style.display = 'none';
+            }
+
+            // Show the selected content div
+            var selectedContent = document.getElementById('content' + contentId);
+            selectedContent.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
